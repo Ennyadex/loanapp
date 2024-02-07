@@ -51,3 +51,5 @@ def login(request):
         form3.save()
         
     return render(request,'login.html')
+def test():
+    print("sguguas")

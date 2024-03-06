@@ -34,7 +34,7 @@ def customer(request):
 
 def allcustomers(request):
        
-       customers = Customer.objects.filter(status__)
+       customers = Customer.objects.fil
        return render(request,'allcustomers.html',{'customers':customers})
     
 def register(request):

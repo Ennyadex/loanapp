@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="content-wrapper">
+  <div class="row">
+    
+   
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">All Customers</h4>
+
+
+         
+          <p class="card-description">
+            Manage Customers
+          </p>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                     Address
+                  </th>
+                  <th>
+                    Phone Number
+                  </th>
+                  <th>
+                    Gender
+                  </th>
+                  <th>
+                     State
+                  </th>
+                  <th>
+                   status
+                 </th>
+                  <th>
+                   Actions
+                 </th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for customer in customers %}
+                <tr>
+                  <td class="py-1">
+                    {{customer.name}}
+                  </td>
+                  <td>
+                   {{customer.address}}
+                  </td>
+                  <td>
+                   {{customer.phone_number}}
+                  </td>
+                  <td>
+                       {{customer.gender}}
+                  </td>
+                  <td>
+                    {{customer.state}}
+                  </td>
+                 
+                  <td>
+
+                    
+                  </td>
+                  
+                  <td>
+                    <a href="#">Edit</a>|<a href="#">Delete</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  
+  </div>
+</div>
+{% endblock content %}

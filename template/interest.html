@@ -1,6 +1,7 @@
 {% extends "main.html" %}
 {% block content %}
 
+{% load  static  %} %}
 <div class="content-wrapper">
   <div class="row">
     
@@ -8,12 +9,12 @@
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Check Status</h4>
+          <h4 class="card-title">Check Interest Rate</h4>
 
 
          
           <p class="card-description">
-            Customer Status
+            Interest Table
           </p>
           <div class="table-responsive">
             <table class="table table-striped table-bordered">
@@ -23,23 +24,42 @@
                     Name
                   </th>
                   <th>
-                 Status
+                 Loan
                   </th>
-                  >
+                  <th>
+                    20% Interest
+                  </th>
+                  <th>
+                    30% Interest
+                  </th>
+                  <th>
+                    40% Interest
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                {% for customer in customers %}
+                {% for customer in rate %}
                 <tr>
                   <td class="py-1">
-                    {{customer.name}}
+                   {{customer.0}}
                   </td>
                   <td>
-                    {{customer.status}}
+                   {{customer.8}}
                   </td>
-                  
+                
+                  <td>
+                       # {{ per20 }}
+                  </td>
+
+                  <td>
+                    {{ per30 }}
+                  </td>
+
+                  <td>
+                    {{ per50 }}
+                  </td>
                 </tr>
-               {% endfor %}
+              {% endfor%}
               </tbody>
             </table>
           </div>

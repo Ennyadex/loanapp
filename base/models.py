@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 
 class Customer(models.Model):
-    
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     phone_number = models.CharField(max_length=50)
@@ -26,6 +25,10 @@ class Status(models.Model):
     updated_at = models.DateTimeField(null= True, auto_now= True)
     created_at = models.DateTimeField(null = True, auto_now= True)   
     
+    def  __str__(self):
+        return self.status
+    
+    
 class Register(models.Model):
     username = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
@@ -40,6 +43,15 @@ class Login(models.Model):
     password = models.CharField(max_length=50)
     updated_at = models.DateTimeField(null= True, auto_now= True)
     created_at = models.DateTimeField(null= True, auto_now= True)
+    
+class Applyloan(models.Model):
+    amount = models.CharField(max_length=50)
+    loan_offer = models.CharField(max_length=50)
+    updated_at = models.DateTimeField(null= True, auto_now= True)
+    created_at = models.DateTimeField(null= True, auto_now= True)
+
+    
+
     
     
 

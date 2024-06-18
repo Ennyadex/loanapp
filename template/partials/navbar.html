@@ -123,10 +123,14 @@
             <i class="ti-settings text-primary"></i>
             Settings
           </a>
-          <a class="dropdown-item">
-            <i class="ti-power-off text-primary"></i>
-            Logout
-          </a>
+          {% if user.is_authenticated %}
+          <form action="{% url 'logout'%} " method="post" class="dropdown-item nav-link">
+            {% csrf_token %}
+            <button class="ti-power-off text-primary"> logout</button>
+          </form>
+        {% endif %}
+          
+        
         </div>
       </li>
     </ul>

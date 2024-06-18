@@ -1,0 +1,96 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="content-wrapper">
+  <div class="row">
+    
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">CUSTOMERS INFORMATION</h4>
+
+
+         
+          <p class="card-description">
+            Customers Loan Status
+          </p>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                     Address
+                  </th>
+                  <th>
+                    Phone Number
+                  </th>
+                  <th>
+                    Gender
+                  </th>
+                  <th>
+                     State
+                  </th>
+                  <th>
+                   Guarantor Name
+                 </th>
+                  <th>
+                   Guarantor Number
+                 </th>
+                 <th>
+                    Guarantor Address
+                  </th>
+                  <th>
+                    Loan Amount
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                {% for customers in customer %}
+                <tr>
+                  <td class="py-1">
+                    {{customers.name}}
+                  </td>
+                  <td>
+                   {{customers.address}}
+                  </td>
+                  <td>
+                   {{customers.phone_number}}
+                  </td>
+                  <td>
+                       {{customers.gender}}
+                  </td>
+                  <td>
+                    {{customers.state}}
+                  </td>
+                 
+                  <td>
+
+                    {{customers.guarantor_name}}
+                  </td>
+                  
+                  <td>
+                    {{customers.g_number}}
+                  </td>
+                  <td>
+                  {{customers.g_address}}
+                  </td>
+
+                <td>
+                {{customers.loan_offer}}
+                </td>
+                
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  
+  </div>
+</div>
+{% endblock content %}

@@ -8,12 +8,12 @@
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">All Customers</h4>
+          <h4 class="card-title">View Status</h4>
 
 
          
           <p class="card-description">
-            Manage Customers
+            Customer Status
           </p>
           <div class="table-responsive">
             <table class="table table-striped table-bordered">
@@ -23,54 +23,31 @@
                     Name
                   </th>
                   <th>
-                     Address
+                 Status
                   </th>
                   <th>
-                    Phone Number
+                  Action
                   </th>
-                  <th>
-                    Gender
-                  </th>
-                  <th>
-                     State
-                  </th>
-                  <th>
-                   status
-                 </th>
-                  <th>
-                   Actions
-                 </th>
                 </tr>
               </thead>
               <tbody>
                 {% for customer in customers %}
                 <tr>
                   <td class="py-1">
-                    {{customer.name}}
+                    {{customer.0}}
                   </td>
                   <td>
-                   {{customer.address}}
+                    {% if customer.5 == "Pending" %}
+                    <span class="btn-xm btn-danger me-2"> {{customer.5}} </span>
+                    {% elif  customer.5 == "Approved" %} 
+                    <span class="btn-xm btn-success me-2"> {{customer.5}} </span>
+                    {% endif %}             
                   </td>
                   <td>
-                   {{customer.phone_number}}
-                  </td>
-                  <td>
-                       {{customer.gender}}
-                  </td>
-                  <td>
-                    {{customer.state}}
-                  </td>
-                 
-                  <td>
-
-                    
-                  </td>
-                  
-                  <td>
-                    <a href="#">Edit</a>|<a href="#">Delete</a>
+                  <a href="{% url 'editstatus' customer.6 customer.0 %}" class="btn-xm btn-primary me-2">EditStatus</a>
                   </td>
                 </tr>
-                {% endfor %}
+               {% endfor %}
               </tbody>
             </table>
           </div>
